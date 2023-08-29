@@ -30,8 +30,8 @@ public class CLConfigs {
 	@ApiStatus.Internal
 	public static final Map<Type, ConfigBase> CONFIGS = new EnumMap<>(Type.class);
 
-	public static CUServer server() {
-		return (CUServer) byType(SERVER);
+	public static CLServer server() {
+		return (CLServer) byType(SERVER);
 	}
 
 	public static @Nullable ConfigBase byType(Type type) {
@@ -56,7 +56,7 @@ public class CLConfigs {
 	}
 
 	public static void register() {
-		register(CUServer::new, SERVER);
+		register(CLServer::new, SERVER);
 
 		for(var pair : CONFIGS.entrySet())
 			Util.registerConfig(pair.getKey(), pair.getValue().specification);
