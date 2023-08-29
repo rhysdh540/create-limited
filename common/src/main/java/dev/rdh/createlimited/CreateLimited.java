@@ -10,9 +10,12 @@ public class CreateLimited {
 	public static final String NAME = "Create Limited";
 	public static final String VERSION = Util.getVersion().split("-")[0];
 	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
+	public static final boolean unlimitedInstalled = Util.isModLoaded("createunlimited");
 
     public static void init() {
 		LOGGER.info("train nerds mod v{} incoming", VERSION);
-		CLConfigs.register();
+		if(unlimitedInstalled) {
+			LOGGER.warn("Create Unlimited is loaded, disabling Limited");
+		} else CLConfigs.register();
 	}
 }
