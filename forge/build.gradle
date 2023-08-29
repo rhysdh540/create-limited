@@ -1,5 +1,5 @@
 plugins {
-    id "com.github.johnrengelman.shadow" version "$shadow_version"
+	id "com.github.johnrengelman.shadow" version "${shadow_version}"
 }
 
 architectury {
@@ -16,25 +16,22 @@ configurations {
 }
 
 repositories {
-    // mavens for Forge-exclusives
-    maven { url = "https://maven.theillusivec4.top/" } // Curios
-    maven { // Create Forge and Registrate Forge
-        url = "https://maven.tterrag.com/"
-        content {
-            includeGroup("com.tterrag.registrate")
-            includeGroup("com.simibubi.create")
-        }
-    }
+	maven { url "https://maven.theillusivec4.top/" } // Curios
 }
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft_version}-${rootProject.forge}"
+
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
 
-    modImplementation("com.simibubi.create:create-${minecraft_version}:${create_forge}:slim") { transitive = false }
-    modImplementation "com.tterrag.registrate:Registrate:${registrate}"
-    modImplementation "com.jozufozu.flywheel:flywheel-forge-${flywheel_mc}:${flywheel}"
+	modImplementation("com.simibubi.create:create-${minecraft_version}:${create_forge}:slim") { transitive = false }
+	modImplementation "com.tterrag.registrate:Registrate:${registrate}"
+	modImplementation "com.jozufozu.flywheel:flywheel-forge-${flywheel_mc}:${flywheel}"
+
+	if(rootProject.hasProperty("snr")) {
+		modImplementation("com.railwayteam.railways:Steam_Rails-forge-${minecraft_version}:${snr}+forge-mc${minecraft_version}-build.${snr_build}")
+	}
 }
 
 shadowJar {
@@ -71,7 +68,7 @@ components.java {
 publishing {
     publications {
         mavenForge(MavenPublication) {
-            artifactId = rootProject.modid + "-" + project.name
+            artifactId = rootProject.archives_base_name + "-" + project.name
             from components.java
         }
     }
