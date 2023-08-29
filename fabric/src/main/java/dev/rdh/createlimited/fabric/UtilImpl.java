@@ -1,6 +1,5 @@
 package dev.rdh.createlimited.fabric;
 
-import net.minecraftforge.api.ModLoadingContext;
 import net.minecraftforge.fml.config.IConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;
 
@@ -8,13 +7,19 @@ import dev.rdh.createlimited.CreateLimited;
 
 import net.fabricmc.loader.api.FabricLoader;
 
+#if PRE_CURRENT_MC_1_19_2
+import net.minecraftforge.api.ModLoadingContext;
+#elif POST_CURRENT_MC_1_20_1
+import fuzs.forgeconfigapiport.api.config.v2.ForgeConfigRegistry;
+#endif
+
 public class UtilImpl {
 
 	public static void registerConfig(ModConfig.Type type, IConfigSpec<?> spec) {
 		#if PRE_CURRENT_MC_1_19_2
 		ModLoadingContext.registerConfig(CreateLimited.ID, type, spec);
 		#elif POST_CURRENT_MC_1_20_1
-		ForgeConfigRegistry.INSTANCE.register(CreateUnlimited.ID, type, spec);
+		ForgeConfigRegistry.INSTANCE.register(CreateLimited.ID, type, spec);
 		#endif
 	}
 
