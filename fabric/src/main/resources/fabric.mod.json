@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
-  "id": "createlimited",
+  "id": "ntl",
   "version": "${version}",
-  "name": "Create Limited",
+  "name": "Create: No Train Limits",
   "description": "y'all train nerds are weird",
   "authors": [ "rdh" ],
   "contact": {
@@ -14,12 +14,12 @@
   "icon": "icon.png",
   "environment": "*",
   "entrypoints": {
-    "main": [ "dev.rdh.createlimited.fabric.CreateLimitedFabric" ],
-    "modmenu": [ "dev.rdh.createlimited.fabric.ModMenuIntegration" ]
+    "main": [ "dev.rdh.ntl.fabric.CreateLimitedFabric" ],
+    "modmenu": [ "dev.rdh.ntl.fabric.ModMenuIntegration" ]
   },
   "mixins": [
-    "createlimited.mixins.json",
-    "createlimited-common.mixins.json"
+    "ntl.mixins.json",
+    "ntl-common.mixins.json"
   ],
   "depends": {
     "minecraft": "${minecraft_version}",

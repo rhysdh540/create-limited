@@ -1,7 +1,7 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "dev.rdh.createlimited.forge.mixin",
+  "package": "dev.rdh.ntl.forge.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [],
   "mixins": [],

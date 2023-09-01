@@ -4,30 +4,30 @@ issueTrackerURL = "https://github.com/rhysdh540/createlimited/issues"
 license = "GPL-3.0"
 
 [[mods]]
-modId = "createlimited"
+modId = "ntl"
 version = "${version}"
-displayName = "Create Limited"
+displayName = "Create: No Train Limits"
 authors = "rdh"
 description = '''
 y'all train nerds are weird
 '''
 logoFile = "icon.png"
 
-[[dependencies.createlimited]]
+[[dependencies.ntl]]
 modId = "forge"
 mandatory = true
 versionRange = "[${forge},)"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.createlimited]]
+[[dependencies.ntl]]
 modId = "minecraft"
 mandatory = true
 versionRange = "${minecraft_version}"
 ordering = "NONE"
 side = "BOTH"
 
-[[dependencies.createlimited]]
+[[dependencies.ntl]]
 modId="create"
 mandatory=true
 versionRange="[${create_forge},)"

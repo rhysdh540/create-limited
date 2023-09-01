@@ -1,13 +1,13 @@
-package dev.rdh.createlimited.fabric;
+package dev.rdh.ntl.fabric;
 
 import com.terraformersmc.modmenu.api.ConfigScreenFactory;
 import com.terraformersmc.modmenu.api.ModMenuApi;
 
-import dev.rdh.createlimited.config.CLConfigs;
+import dev.rdh.ntl.config.NTLConfigs;
 
 public class ModMenuIntegration implements ModMenuApi {
 	@Override
 	public ConfigScreenFactory<?> getModConfigScreenFactory() {
-		return CLConfigs::createConfigScreen;
+		return NTLConfigs::createConfigScreen;
 	}
 }

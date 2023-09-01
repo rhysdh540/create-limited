@@ -1,7 +1,7 @@
-package dev.rdh.createlimited.mixin;
+package dev.rdh.ntl.mixin;
 
 import com.simibubi.create.content.trains.track.TrackPlacement;
-import dev.rdh.createlimited.config.CLConfigs;
+import dev.rdh.ntl.config.NTLConfigs;
 
 import net.minecraft.util.Mth;
 
@@ -16,12 +16,12 @@ import org.spongepowered.asm.mixin.injection.Slice;
 public class TrackPlacementMixin {
 	@ModifyConstant(method = "tryConnect", constant = @Constant(doubleValue = 7, ordinal = 0), remap = false)
 	private static double setMinTurnRadius(double original) {
-		return CLConfigs.server().minTurnSize.get();
+		return NTLConfigs.server().minTurnSize.get();
 	}
 
 	@ModifyConstant(method = "tryConnect", constant = @Constant(doubleValue = 3.25, ordinal = 0), remap = false)
 	private static double setMin45TurnRadius(double original) {
-		return CLConfigs.server().min45TurnSize.get();
+		return NTLConfigs.server().min45TurnSize.get();
 	}
 
 	@Redirect(
@@ -38,6 +38,6 @@ public class TrackPlacementMixin {
 		)
 	)
 	private static boolean gimmeSlopeSTurn3(double x, double y) {
-		return CLConfigs.server().allowSlopeSTurns.get() || Mth.equal(x, y);
+		return NTLConfigs.server().allowSlopeSTurns.get() || Mth.equal(x, y);
 	}
 }

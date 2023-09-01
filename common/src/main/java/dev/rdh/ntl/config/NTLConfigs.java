@@ -1,15 +1,15 @@
-package dev.rdh.createlimited.config;
+package dev.rdh.ntl.config;
 
 
 import com.simibubi.create.foundation.config.ConfigBase;
 import com.simibubi.create.foundation.config.ui.BaseConfigScreen;
 
-import dev.rdh.createlimited.Util;
+import dev.rdh.ntl.Util;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screens.Screen;
 
-import dev.rdh.createlimited.CreateLimited;
+import dev.rdh.ntl.CreateNTL;
 
 import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;
@@ -25,13 +25,13 @@ import java.util.function.Supplier;
 
 import static net.minecraftforge.fml.config.ModConfig.Type.*;
 
-public class CLConfigs {
+public class NTLConfigs {
 
 	@ApiStatus.Internal
 	public static final Map<Type, ConfigBase> CONFIGS = new EnumMap<>(Type.class);
 
-	public static CLServer server() {
-		return (CLServer) byType(SERVER);
+	public static NTLServer server() {
+		return (NTLServer) byType(SERVER);
 	}
 
 	public static @Nullable ConfigBase byType(Type type) {
@@ -56,7 +56,7 @@ public class CLConfigs {
 	}
 
 	public static void register() {
-		register(CLServer::new, SERVER);
+		register(NTLServer::new, SERVER);
 
 		for(var pair : CONFIGS.entrySet())
 			Util.registerConfig(pair.getKey(), pair.getValue().specification);
@@ -75,11 +75,11 @@ public class CLConfigs {
 	}
 
 	public static BaseConfigScreen createConfigScreen(Screen parent) {
-		BaseConfigScreen.setDefaultActionFor(CreateLimited.ID, (base) ->
+		BaseConfigScreen.setDefaultActionFor(CreateNTL.ID, (base) ->
 			base.withSpecs(getSpecByType(CLIENT), getSpecByType(COMMON), getSpecByType(SERVER))
 				.withTitles("", "", "Settings")
 		);
-		return new BaseConfigScreen(parent, CreateLimited.ID);
+		return new BaseConfigScreen(parent, CreateNTL.ID);
 	}
 	public static BaseConfigScreen createConfigScreen(@Nullable Minecraft mc, Screen parent) {
 		return createConfigScreen(parent);

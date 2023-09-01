@@ -1,4 +1,4 @@
-package dev.rdh.createlimited;
+package dev.rdh.ntl;
 
 import net.minecraftforge.fml.config.IConfigSpec;
 import net.minecraftforge.fml.config.ModConfig;

@@ -1,4 +1,4 @@
-package dev.rdh.createlimited.mixin;
+package dev.rdh.ntl.mixin;
 
 import com.simibubi.create.infrastructure.config.CTrains;
 

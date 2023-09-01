@@ -1,6 +1,6 @@
-package dev.rdh.createlimited.config;
+package dev.rdh.ntl.config;
 
-import dev.rdh.createlimited.CreateLimited;
+import dev.rdh.ntl.CreateNTL;
 
 import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
@@ -9,8 +9,8 @@ import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 import java.util.List;
 import java.util.Set;
 
-// basically disable limited if unlimited is installed
-public class CLMixinConfigPlugin implements IMixinConfigPlugin {
+// basically disable ntl if unlimited is installed
+public class NTLMixinConfigPlugin implements IMixinConfigPlugin {
 	@Override
 	public void onLoad(String mixinPackage) {}
 
@@ -21,7 +21,7 @@ public class CLMixinConfigPlugin implements IMixinConfigPlugin {
 
 	@Override
 	public boolean shouldApplyMixin(String targetClassName, String mixinClassName) {
-		return !CreateLimited.unlimitedInstalled;
+		return !CreateNTL.unlimitedInstalled;
 	}
 
 	@Override

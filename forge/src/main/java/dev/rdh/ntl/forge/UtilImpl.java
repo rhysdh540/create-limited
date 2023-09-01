@@ -1,6 +1,6 @@
-package dev.rdh.createlimited.forge;
+package dev.rdh.ntl.forge;
 
-import dev.rdh.createlimited.CreateLimited;
+import dev.rdh.ntl.CreateNTL;
 
 import net.minecraftforge.common.util.MavenVersionStringHelper;
 import net.minecraftforge.fml.ModList;
@@ -20,12 +20,12 @@ public class UtilImpl {
 	public static String getVersion() {
 		String versionString = "UNKNOWN";
 
-		List<IModInfo> infoList = ModList.get().getModFileById(CreateLimited.ID).getMods();
+		List<IModInfo> infoList = ModList.get().getModFileById(CreateNTL.ID).getMods();
 		if (infoList.size() > 1) {
-			CreateLimited.LOGGER.error("Multiple mods for ID: " + CreateLimited.ID);
+			CreateNTL.LOGGER.error("Multiple mods for ID: " + CreateNTL.ID);
 		}
 		for (IModInfo info : infoList) {
-			if (info.getModId().equals(CreateLimited.ID)) {
+			if (info.getModId().equals(CreateNTL.ID)) {
 				versionString = MavenVersionStringHelper.artifactVersionToString(info.getVersion());
 				break;
 			}

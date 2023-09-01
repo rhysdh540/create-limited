@@ -1,8 +1,8 @@
-package dev.rdh.createlimited.fabric;
+package dev.rdh.ntl.fabric;
 
-import dev.rdh.createlimited.CreateLimited;
+import dev.rdh.ntl.CreateNTL;
 
-import dev.rdh.createlimited.config.CLConfigs;
+import dev.rdh.ntl.config.NTLConfigs;
 
 #if PRE_CURRENT_MC_1_19_2
 import net.minecraftforge.api.fml.event.config.ModConfigEvents;
@@ -14,8 +14,8 @@ import net.fabricmc.api.ModInitializer;
 public class CreateLimitedFabric implements ModInitializer {
     @Override
     public void onInitialize() {
-		ModConfigEvents.loading(CreateLimited.ID).register(CLConfigs::onLoad);
-		ModConfigEvents.reloading(CreateLimited.ID).register(CLConfigs::onReload);
-        CreateLimited.init();
+		ModConfigEvents.loading(CreateNTL.ID).register(NTLConfigs::onLoad);
+		ModConfigEvents.reloading(CreateNTL.ID).register(NTLConfigs::onReload);
+        CreateNTL.init();
     }
 }

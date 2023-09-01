@@ -1,8 +1,8 @@
-package dev.rdh.createlimited.config;
+package dev.rdh.ntl.config;
 
 import com.simibubi.create.foundation.config.ConfigBase;
 
-public class CLServer extends ConfigBase {
+public class NTLServer extends ConfigBase {
 	@Override
 	public String getName() {
 		return "server";
